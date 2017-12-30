@@ -1,6 +1,5 @@
 var path = require('path')
 var webpack = require('webpack')
-var PrerenderSpaPlugin = require('prerender-spa-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -55,15 +54,6 @@ if (process.env.NODE_ENV === 'production') {
       filename: path.resolve(__dirname, 'dist/index.html'),
       favicon: 'favicon.ico'
     }),
-    new PrerenderSpaPlugin(
-      // Absolute path to compiled SPA
-      path.resolve(__dirname, './dist'),
-      // List of routes to prerender
-      [ '/', '/about', '/contact' ],
-      {
-        // options
-      }
-    )
   ])
 } else {
   // NODE_ENV === 'development'
