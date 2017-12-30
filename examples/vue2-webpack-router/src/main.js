@@ -24,3 +24,7 @@ new Vue({
   router,
   render: h => h(App)
 })
+
+window.snapSaveState = () => {
+  document.querySelector('#app').setAttribute('data-server-rendered', 'true')
+};
